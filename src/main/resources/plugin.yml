@@ -2,3 +2,4 @@ name: PlightSpigot
 version: ${project.version}
 main: dev.dankom.plightspigot.PluginTest
 api-version: 1.16
+commands:
