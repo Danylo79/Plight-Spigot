@@ -23,7 +23,6 @@ public class YmlFile {
         this.logger = plugin.getLogger();
         this.fileName = fileName;
         this.plugin = plugin;
-        logger.log(Level.INFO, "Yaml Config for " + fileName);
         saveDefaultConfig();
     }
 
@@ -36,7 +35,6 @@ public class YmlFile {
     }
 
     public void set(String key, Object value) {
-        logger.log(Level.INFO, getConfig().toString());
         this.dataConfig.set(key, value);
         this.saveConfig();
     }
@@ -72,7 +70,6 @@ public class YmlFile {
     }
 
     public void saveConfig() {
-//        logger.log(Level.INFO, "Config Saving!");
         if (this.dataConfig == null || this.configFile == null) {
             return;
         }
@@ -89,7 +86,6 @@ public class YmlFile {
         }
 
         if (!this.configFile.exists()) {
-            logger.log(Level.INFO, "Saved Default Config!");
             saveResource(dataFolder, this.fileName, false);
         }
     }
